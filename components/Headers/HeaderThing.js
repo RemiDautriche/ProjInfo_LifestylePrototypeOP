@@ -11,7 +11,7 @@ export default function HeaderSearch() {
     const navigation = useNavigation();
 
     return(
-        <TouchableOpacity onPress={()=> navigation.navigate("Heart")} style = {{position: 'absolute', left: 10, top: 10, justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.8)', height: 45, width: 45, borderRadius: 90}}> 
+        <TouchableOpacity onPress={()=> navigation.goBack(null)} style = {{position: 'absolute', left: 10, top: 10, justifyContent: 'center', backgroundColor: 'rgba(0, 0, 0, 0.8)', height: 45, width: 45, borderRadius: 90}}> 
             <Image source={icons.ArrowL} style ={{resizeMode: 'contain', height: 24, width: 24, tintColor: 'lightblue', alignSelf: 'center', marginRight: 4}}/>
         </TouchableOpacity>
         //change position of logo relative

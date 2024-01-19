@@ -51,7 +51,7 @@ const SignUp = () => {
 
   return (
     <KeyboardAvoidingView>
-        <ImageBackground source ={images.BackGGt} style = {styles.HeaderBack}>
+        <ImageBackground source ={images.BackG} style = {styles.HeaderBack}>
             <View style = {{width: "80%", height: "70%"}}>
               <View style = {{height: "18%", alignItems: 'center', justifyContent: "center"}}>
                 <Text style = {styles.CreateTitle}>Create new</Text>

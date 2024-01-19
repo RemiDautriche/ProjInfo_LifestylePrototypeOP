@@ -7,6 +7,9 @@ import {
   Image
 } from 'react-native';
 import icons from '../../constants/icons';
+import { addDoc, doc, setDoc } from "firebase/firestore";
+import {FIREBASE_DB, FIREBASE_AUTH} from '../../FirebaseConfig';
+const db = FIREBASE_DB;
 
   const RatingFilter = () => {
     const [rating1, setRating1] = useState(false)
@@ -23,13 +26,25 @@ import icons from '../../constants/icons';
         setRating3(false);
         setRating4(false);
         setRating5(false);
-    }
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Rating"), {
+          r: 1
+        }).catch((error) => {
+            console.log(error)
+        });
+      };
     const rating2s = () => {
         setRating1(true);
         setRating2(true);
         setRating3(false);
         setRating4(false);
         setRating5(false);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Rating"), {
+          r: 2
+        }).catch((error) => {
+            console.log(error)
+        });
     }
     const rating3s = () => {
         setRating1(true);
@@ -37,6 +52,12 @@ import icons from '../../constants/icons';
         setRating3(true);
         setRating4(false);
         setRating5(false);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Rating"), {
+          r: 3
+        }).catch((error) => {
+            console.log(error)
+        });
     }
     const rating4s = () => {
         setRating1(true);
@@ -44,6 +65,12 @@ import icons from '../../constants/icons';
         setRating3(true);
         setRating4(true);
         setRating5(false);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Rating"), {
+          r: 4
+        }).catch((error) => {
+            console.log(error)
+        });
     }
     const rating5s = () => {
         setRating1(true);
@@ -51,6 +78,12 @@ import icons from '../../constants/icons';
         setRating3(true);
         setRating4(true);
         setRating5(true);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Rating"), {
+          r: 5
+        }).catch((error) => {
+            console.log(error)
+        });
     }
     
 

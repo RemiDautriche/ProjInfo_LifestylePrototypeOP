@@ -6,6 +6,7 @@ import { Text, View, Image, TouchableOpacity } from 'react-native';
 import { ref, getDownloadURL } from "firebase/storage";
 import {FIREBASE_ST, FIREBASE_DB, FIREBASE_AUTH} from '../FirebaseConfig';
 import { doc, collection, getDoc, onSnapshot, setDoc } from "firebase/firestore";
+import { useNavigation } from '@react-navigation/native';
 
 const storage = FIREBASE_ST; 
 const db = FIREBASE_DB;
@@ -14,6 +15,7 @@ const LikeableComponent = ({ item, onPress }) => {
 
     const [isLiked, setIsLiked] = useState(false);
     const [url, setUrl] = useState();
+    const navigation = useNavigation();
 
 //image getter
     useEffect(() => {
@@ -70,7 +72,7 @@ useEffect(() => {
   }, []);
 
     return(
-    <TouchableOpacity activeOpacity={0.5} style ={{backgroundColor: 'black', marginRight: 6, width: 170, height: 210, borderRadius: 10, marginLeft: 15 }}>
+    <TouchableOpacity activeOpacity={0.5} onPress= {()=> navigation.navigate("ThingPage", {item})} style ={{backgroundColor: 'black', marginRight: 6, width: 170, height: 210, borderRadius: 10, marginLeft: 15 }}>
         <View style = {{width: "100%", height: 150}}>
             <Image source = {{uri: url}} style={{resizeMode: 'cover', width: "100%", height: "100%", borderTopLeftRadius: 10, borderTopRightRadius: 10}}/>
         </View>
@@ -84,7 +86,7 @@ useEffect(() => {
                <Text style = {{fontFamily: 'Poppins-Regular', fontSize: 18, marginLeft: 12, color: 'white', marginVertical: 5}}>{item.nom}</Text> 
             </View>
             <TouchableOpacity onPress={() => handlePress(item.nom)} style = {{width: "30%", justifyContent: 'center', alignItems: 'center'}}>
-                <Image source = {icons.HeartIcon} style = {{resizeMode: 'stretch', height: 24, width: 24, tintColor: 'white'}}/>
+                <Image source = {isLiked? icons.HeartFocused: icons.HeartIcon} style = {{resizeMode: 'stretch', height: 24, width: 24, tintColor: 'white'}}/>
             </TouchableOpacity>
         </LinearGradient>
     </TouchableOpacity>

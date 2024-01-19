@@ -19,7 +19,7 @@ const Heart = () => {
     <View>
         <Image source = {images.BackG} style = {{resizeMode: 'cover', height: screenHeight, width: screenWidth, position: 'absolute', top: 0}}/>
     </View>    
-    <View style ={{}}>
+    <View>
       <FavoriteScrollList/>
     </View>
     

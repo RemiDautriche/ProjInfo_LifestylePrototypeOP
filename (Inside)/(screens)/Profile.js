@@ -35,7 +35,7 @@ const Profile = () => {
     return(
 
     <>
-    <StatusBar backgroundColor="rgba(0, 0, 0, 1)" barStyle='light-content'/>
+    <StatusBar backgroundColor="black" barStyle='light-content'/>
     <View>
         <Image source = {images.BackG} style = {{resizeMode: 'cover', height: screenHeight, width: screenWidth, position: 'absolute', top: 0}}/>
     </View>    
@@ -51,11 +51,11 @@ const Profile = () => {
         </View>
     </View>
     <TouchableOpacity style ={{backgroundColor: 'rgba(0, 0, 0, 0)', height: 65, alignItems: 'center', flexDirection: 'row', marginVertical: 6}}>
-        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Personal Information</Text>
+        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Informations Personnelles</Text>
         <Image source= {icons.ArrowR} style= {{height: 20, width: 15, resizeMode: 'stretch', tintColor: TC, marginBottom: 3,  position: 'absolute', right: 25}}/>
     </TouchableOpacity>
     <TouchableOpacity style ={{backgroundColor: 'rgba(0, 0, 0, 0)', height: 65, alignItems: 'center', flexDirection: 'row', marginVertical: 6}}>
-        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Feedback</Text>
+        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Commentaires</Text>
         <Image source= {icons.ArrowR} style= {{height: 20, width: 15, resizeMode: 'stretch', tintColor: TC, marginBottom: 3,  position: 'absolute', right: 25}}/>
     </TouchableOpacity>
     <TouchableOpacity style ={{backgroundColor: 'rgba(0, 0, 0, 0)', height: 65, alignItems: 'center', flexDirection: 'row', marginVertical: 6}}>
@@ -63,11 +63,11 @@ const Profile = () => {
         <Image source= {icons.ArrowR} style= {{height: 20, width: 15, resizeMode: 'stretch', tintColor: TC, marginBottom: 3, position: 'absolute', right: 25}}/>
     </TouchableOpacity>
     <TouchableOpacity style ={{backgroundColor: 'rgba(0, 0, 0, 0)', height: 65, alignItems: 'center', flexDirection: 'row', marginVertical: 6}}>
-        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Privacy Policy</Text>
+        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Politique de Confidentialité</Text>
         <Image source= {icons.ArrowR} style= {{height: 20, width: 15, resizeMode: 'stretch', tintColor: TC, marginBottom: 3,  position: 'absolute', right: 25}}/>
     </TouchableOpacity>
     <TouchableOpacity style ={{backgroundColor: 'rgba(0, 0, 0, 0)', height: 65, alignItems: 'center', flexDirection: 'row', marginVertical: 6}}>
-        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Terms & Conditions of Use</Text>
+        <Text style = {{fontSize: 26, fontFamily: "Poppins-Medium", marginLeft: 25, color: TC}}>Conditions d'Utilisation</Text>
         <Image source= {icons.ArrowR} style= {{height: 20, width: 15, resizeMode: 'stretch', tintColor: TC, marginBottom: 3,  position: 'absolute', right: 25}}/>
     </TouchableOpacity>
     <TouchableOpacity onPress= {()=>FIREBASE_AUTH.signOut()} style ={{marginTop: 38, marginLeft: 25, width: 85}}>

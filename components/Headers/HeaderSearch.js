@@ -29,7 +29,7 @@ export default function HeaderSearch() {
 
             <View style = {{position: 'absolute', top: 0, flexDirection: 'row', width: "100%", justifyContent: 'space-between'}}> 
 
-                <TouchableOpacity onPress={()=> navigation.navigate("Events")} style = {{height: 55, width: "15%", justifyContent: 'center'}}> 
+                <TouchableOpacity onPress={()=> navigation.goBack(null)} style = {{height: 55, width: "15%", justifyContent: 'center'}}> 
                     <Image source={icons.ArrowL} style ={{resizeMode: 'stretch', height: 22, width: 20, tintColor: 'white', alignSelf: 'center'}}/>
                 </TouchableOpacity>
 

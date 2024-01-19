@@ -61,7 +61,7 @@ async function queryCollection(){
     const randomNumber = genRanNum(0, 56);
     const q = query(collectionRef,
         where('typelieux', '==', props.type),
-        limit(5),
+        where("Adresse", '!=', "12 Rue des Frères, 67000 Strasbourg"),
         orderBy("Adresse"),
         startAt(randomNumber),
         )
@@ -132,6 +132,7 @@ const renderItem = ({ item }) => (
         horizontal
         showsHorizontalScrollIndicator = {false}
       />
+
     </View>
  );
 };

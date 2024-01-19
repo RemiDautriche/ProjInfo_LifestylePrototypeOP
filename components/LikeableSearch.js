@@ -5,7 +5,6 @@ import React, { useState, useEffect } from 'react';
 import { doc, collection, getDoc, onSnapshot } from "firebase/firestore";
 import { Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import ThingPage from '../(Inside)/(screens)/ThingPage';
 import { ref, getDownloadURL } from "firebase/storage";
 import {FIREBASE_ST, FIREBASE_DB, FIREBASE_AUTH} from '../FirebaseConfig';
 
@@ -13,7 +12,7 @@ import {FIREBASE_ST, FIREBASE_DB, FIREBASE_AUTH} from '../FirebaseConfig';
 const storage = FIREBASE_ST; 
 const db = FIREBASE_DB;
 
-const LikeableFavorite = ({ item, onPress }) => {
+const LikeableSearch = ({ item, onPress }) => {
 
     const screenWidth = Dimensions.get('screen').width;
     const [isLiked, setIsLiked] = useState(false);
@@ -104,4 +103,4 @@ const LikeableFavorite = ({ item, onPress }) => {
     
 
 };
-export default LikeableFavorite;
+export default LikeableSearch;

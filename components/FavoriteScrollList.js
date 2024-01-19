@@ -5,13 +5,12 @@ import {FIREBASE_DB, FIREBASE_AUTH} from '../FirebaseConfig';
 import icons from '../constants/icons';
 import images from '../constants/images';
 import {LinearGradient} from 'expo-linear-gradient';
-import LikeableComponent from './LikeableComponent';
 import LikeableFavorite from './LikeableFavorite';
 
 const db = FIREBASE_DB;
 
 //main func
-const FavoriteScrollList = (props) => {
+const FavoriteScrollList = () => {
 const screenHeight = Dimensions.get('screen').height;
 const screenWidth = Dimensions.get('screen').width;
 const ThingRef = collection(db, "Etablissements");
@@ -149,7 +148,7 @@ const renderItem = ({ item }) => (
  return (
     <View>
         <FlatList
-            style ={{height: screenHeight-115, overflow: 'visible', marginTop: 60}}
+            style ={{height: screenHeight-170, overflow: 'visible', marginTop: 60}}
             data={data}
             renderItem={renderItem}
             keyExtractor={item => item.id}

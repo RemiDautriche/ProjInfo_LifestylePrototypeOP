@@ -7,6 +7,9 @@ import {
   Image
 } from 'react-native';
 import icons from '../../constants/icons';
+import { doc, setDoc } from "firebase/firestore";
+import {FIREBASE_DB, FIREBASE_AUTH} from '../../FirebaseConfig';
+const db = FIREBASE_DB;
 
   const PriceFilter = () => {
     const [price, setPrice] = useState(0)
@@ -20,6 +23,11 @@ import icons from '../../constants/icons';
       setPrice1(true);
       setPrice2(false);
       setPrice3(false);
+      setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Price"), {
+        p: 1
+      }).catch((error) => {
+          console.log(error)
+      });
     }
     
     const price2s = () => {
@@ -27,6 +35,11 @@ import icons from '../../constants/icons';
       setPrice1(true);
       setPrice2(true);
       setPrice3(false);
+      setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Price"), {
+        p: 2
+      }).catch((error) => {
+          console.log(error)
+      });
     }
 
     const price3s = () => {
@@ -34,6 +47,11 @@ import icons from '../../constants/icons';
       setPrice1(true);
       setPrice2(true);
       setPrice3(true);
+      setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Price"), {
+        p: 3
+      }).catch((error) => {
+          console.log(error)
+      });
     }
 
     return (

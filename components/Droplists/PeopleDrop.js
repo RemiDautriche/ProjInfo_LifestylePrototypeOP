@@ -6,6 +6,9 @@ import {
   Pressable,
   Image
 } from 'react-native';
+import { doc, setDoc } from "firebase/firestore";
+import {FIREBASE_DB, FIREBASE_AUTH} from '../../FirebaseConfig';
+const db = FIREBASE_DB;
 
   const PeopleFilter = () => {
     const [people1, setPeople1] = useState(false);

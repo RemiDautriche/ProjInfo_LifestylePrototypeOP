@@ -6,6 +6,10 @@ import {
   Image
 } from 'react-native';
 import icons from '../../constants/icons';
+import { doc, setDoc } from "firebase/firestore";
+import {FIREBASE_DB, FIREBASE_AUTH} from '../../FirebaseConfig';
+const db = FIREBASE_DB;
+
 
   const TypeFilter = () => {
     const [type1, setType1] = useState(false);
@@ -17,18 +21,36 @@ import icons from '../../constants/icons';
         setType1(true);
         setType2(false);
         setType3(false);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Type"), {
+          typelieux: "bar"
+        }).catch((error) => {
+            console.log(error)
+        });
     }
     
     const type2s = () => {
         setType1(false);
         setType2(true);
         setType3(false);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Type"), {
+          typelieux: "restaurant"
+        }).catch((error) => {
+            console.log(error)
+        });
     }
 
     const type3s = () => {
         setType1(false);
         setType2(false);
         setType3(true);
+
+        setDoc(doc(db, "Utilisateurs",FIREBASE_AUTH.currentUser?.email, "CurrentSearch", "Type"), {
+          typelieux: "boite de nuit"
+        }).catch((error) => {
+            console.log(error)
+        });
     }
 
     return (
