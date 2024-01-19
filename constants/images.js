@@ -3,7 +3,6 @@ import HLimg from "../assets/images/HLimg.jpg";
 import BackG from "../assets/images/BackG.jpeg";
 import TypeLieu3 from "../assets/images/TypeLieu3.png";
 import BackGGt from "../assets/images/BackGGt.png";
-import OF from "../assets/images/OF.png";
 import LOGO from "../assets/images/LOGO.png";
 import ProfilePic from "../assets/images/ProfilePic.png";
 import TisMap from "../assets/images/TisMAp.png";
@@ -17,7 +16,6 @@ export default {
   HLimg,
   TypeLieu3,
   BackGGt,
-  OF,
   LOGO,
   BackG,
   ProfilePic,
